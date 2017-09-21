@@ -55,6 +55,11 @@ function fish_prompt
 	# Git
 	set prompt $prompt (__fish_git_prompt '%s')
 
+	# Desk
+	if test $DESK_NAME
+		set prompt $prompt '◲' $DESK_NAME
+	end
+
 	# prompt symbol
 	if [ $exit_code != 0 ]; set prompt $prompt $_vbr_red'♦'
 	else;                   set prompt $prompt $_vbr_green'♦'
