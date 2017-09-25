@@ -56,8 +56,8 @@ function fish_prompt
 	set prompt $prompt (__fish_git_prompt '%s')
 
 	# Desk
-	if test $DESK_NAME
-		set prompt $prompt '◲' $DESK_NAME
+	if test $DESK_NAMES
+		set prompt $prompt '◲' (string join '|' $DESK_NAMES)
 	end
 
 	# prompt symbol
