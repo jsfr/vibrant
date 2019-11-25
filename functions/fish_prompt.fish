@@ -61,6 +61,11 @@ function fish_prompt
 		set prompt $prompt '◲' $desks
 	end
 
+    # Administrator
+	if id -Gn | grep -qw admin
+		set prompt $prompt $_vbr_yellow'[↯]'
+	end
+
 	# prompt symbol
 	if [ $exit_code != 0 ]; set prompt $prompt $_vbr_red'♦'
 	else;                   set prompt $prompt $_vbr_green'♦'
